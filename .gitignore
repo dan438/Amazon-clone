@@ -2,9 +2,12 @@
 
 # dependencies
 /node_modules
+/backend
 /.pnp
 .pnp.js
-
+.env
+.firebaserc
+.firebase
 # testing
 /coverage
 
@@ -18,6 +21,8 @@
 .env.test.local
 .env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+
+package-lock.json*
+firebase.json*
+database.rules.json
+*-debug.log
