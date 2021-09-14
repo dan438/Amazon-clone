@@ -1,9 +1,13 @@
 import React from "react";
 import "./product.css";
 import { useStateValue } from "../../StateProvider";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import {useHistory} from "react-router-dom";
 
 function Product({ id, title, image, price, rating, keyId }) {
   const [{} ,dispatch] = useStateValue();
+
+  const history = useHistory();
 
   const addToBasket = () => {
     dispatch({
@@ -17,6 +21,10 @@ function Product({ id, title, image, price, rating, keyId }) {
       },
     });
   };
+
+  const handleShoppingButton = () => {
+    history.push("/checkout");
+  }
 
   return (
     <div className="product">
@@ -36,8 +44,14 @@ function Product({ id, title, image, price, rating, keyId }) {
       </div>
 
       <img src={image} alt="" />
-
-      <button onClick={addToBasket}>Add to Basket</button>
+      <div className="product__buttons">
+        <button onClick={addToBasket}>Add to Basket</button>
+        
+        <button onClick={handleShoppingButton} className="shopping__button" >
+          <ShoppingBasketIcon />   
+         </button>  
+      </div>
+      
     </div>
   );
 }
