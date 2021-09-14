@@ -54,4 +54,12 @@
   .payment__section {
     flex-direction: column;
   }
+
+  .payment__title {
+    margin-bottom: 20px;
+  }
+
+  .payment__priceContainer {
+    margin-top: 20px;
+  }
 }
